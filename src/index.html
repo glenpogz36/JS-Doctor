@@ -1,11 +1,48 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <title>Doctor App</title>
+  <script type="text/javascript" src="bundle.js"></script>
+  <title>Doctor APP</title>
 </head>
 
 <body>
+  <div class="header"></div>
 
+  <div id="navbar">
+    <ul id="list">
+      <li><a class="active" href="">Home</a></li>
+      <li><a href="">News</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </div>
+  <br>
+  <br>
+
+  <div class="jumbotron">
+    <center>
+      <h1>Search Your Doctor</h1>
+    </center>
+  </div>
+  <div class="container">
+    <form id="doctorForm" autocomplete="off">
+      <h3>Search by Name</h3>
+      <label for="doctorSearch"></label>
+      <input type="text" id="doctorSearch">
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    <br>
+    <form id="illnessForm" autocomplete="off">
+      <h3>Search Current Illness</h3>
+      <label for="illnessSearch"></label>
+      <input type="text" id="illnessSearch">
+      <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+  </div>
+  <br>
+  <div class="container">
+    <ul id="results"></ul>
+  </div>
 </body>
 
 </html>
