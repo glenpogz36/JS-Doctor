@@ -29,30 +29,7 @@ $(document).ready(function () {
             }
         });
     });
-    //
-    $("#illnessForm").submit(function (event) {
-        event.preventDefault();
-        $("#results").text("");
-        $("#error").text("");
-        let condition = $("#condition").val();
-        let newSearch = new Search();
-        let promise = newSearch.foundIllness(condition);
 
-        promise.then(function (response) {
-            let body = JSON.parse(response);
-            let result = body.data;
-            if (body.data.length === 0) {
-                $("#error").text("Results not found.");
-            }
-            for (var i = 0; i < result.length; i++) {
-                $("#results").append("<h4>" + result[i].profile.first_name + " " + result[i].profile.last_name + "</h4>" + "Phone number: " + result[i].practices[0].phones[0].number + "<br>" + "Address: " + "City: " + result[i].practices[0].visit_address.city + "<br>" + "State: " + result[i].practices[0].visit_address.state + "<br>" +
-                    "Street: " + result[i].practices[0].visit_address.street + "<br>" +
-                    "Zip: " + result[i].practices[0].visit_address.zip + "<br>" +
-                    "Available: " + result[i].practices[0].accepts_new_patients + "<br>" +
-                    "Bio: " + result[i].profile.bio + "<br>" + "<hr>");
-            }
-        })
-    })
 
 
 
@@ -62,7 +39,7 @@ $(document).ready(function () {
         $("#error").text("");
         let condition = $("#condition").val();
         let newSearch = new Search();
-        let promise = newSearch.foundIllness(condition);
+        let promise = newSearch.foundCondition(condition);
 
         promise.then(function (response) {
             let body = JSON.parse(response);
